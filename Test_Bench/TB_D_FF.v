@@ -6,7 +6,7 @@ module TB_D_FF;
    reg expected_out;
    reg prev_d;
    integer i; // use integer for loops in simulation
-   
+   assign expected_out = prev_d;
    function bit check;  //bit is the return type of function //This is a function to check the maths - software
       input expected_out;
       input out;
@@ -26,13 +26,13 @@ module TB_D_FF;
       d = 0;
       for ( i = 0 ; i < 10 ; i = i+1) begin
          #1 clk  = 1'b0;
-         d = $urandom_range(0,1); //choosing a random bit value
+         d = $urandom_range(0,1)[0]; //choosing a random bit value
          
          if (check (expected_out , q)) begin 
-               $display("PASS @ %0t: q=%0b, expected=%0b", $time, q, expected_out);
+            $display("PASS @ %0t: q=%0b,d=%0b, expected=%0b", $time, q,d, expected_out);
          end
          else begin
-            $display("FAIL @ %0t: q=%0b, expected=%0b", $time, q, expected_out);
+            $display("FAIL @ %0t: q=%0b,d=%0b, expected=%0b", $time, q,d, expected_out);
          end
          #1 clk = 1'b1;
       end
@@ -40,7 +40,6 @@ module TB_D_FF;
    end
    always @(posedge clk) begin
       prev_d <= d;
-      expected_out <= prev_d;
    end
 endmodule
   
