@@ -7,3 +7,4 @@ What to Learn in each of the codes :
 6) Edge Detected -> Learn about how to generate a pulse , write a synchronous delay , Also how to delay instructions - use additional reg
 7) PISO => Left and Right Shift , PISO Architecture , Buffer design and use
 8) SIPO => LEft shift
+9) FIBONACCI => Understand how the non blocking works
