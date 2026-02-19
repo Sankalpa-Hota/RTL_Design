@@ -31,7 +31,7 @@ end
 endmodule
 
 //We learn how the unblocking prevents the software implementation of using a temp reg to store and update the number_1 ( prev_number)
-Logic is 
+//Logic is 
 /*Prev = 0 , curr = 1 , out = 1 (time 0)
 Prev = 1 ( non blocking so it appears as 1 for next cycle) , curr = 1+0 , out =1 ( first cycle) // we take the prev value before the update
 */
