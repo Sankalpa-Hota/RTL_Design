@@ -33,7 +33,7 @@ reg [DATA_WIDTH-1:0] temp_1;
 always@(posedge clk)begin
   if(!resetn)begin
     temp_1 <=0;
-    temp_out<=0;
+    temp_out<=1;  //Based on the question we were 1 cycle behin so started the counter from 1 as reset takes care of 0
   end
   else begin
     temp_out <= temp_out + 1'b1;
